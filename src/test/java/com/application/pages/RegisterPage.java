@@ -8,41 +8,42 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+
 import io.cucumber.datatable.DataTable;
 
 
-public class RegisterPage extends BaseClass {
+public class RegisterPage extends Baseclass {
 
 	public RegisterPage(WebDriver driver) {
 		super(driver);
 	
 	}
 	
-	@FindBy(xpath="//input[@id='AccountFrm_firstname']")
+	@FindBy(id="AccountFrm_firstname")
 	WebElement firstnameclk;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_lastname']")
+	@FindBy(name="lastname")
 	WebElement lastnameclk;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_email']")
+	@FindBy(id="AccountFrm_email")
 	WebElement emailclk;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_address_1']")
+	@FindBy(id="AccountFrm_address_1")
 	WebElement address1clk;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_city']")
+	@FindBy(id="AccountFrm_city")
 	WebElement cityclk;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_postcode']")
+	@FindBy(id="AccountFrm_postcode")
 	WebElement pincode;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_loginname']")
+	@FindBy(id="AccountFrm_loginname")
 	WebElement username;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_password']")
+	@FindBy(id="AccountFrm_password")
 	WebElement password;
 	
-	@FindBy(xpath="//input[@id='AccountFrm_confirm']")
+	@FindBy(id="AccountFrm_confirm")
 	WebElement cnfrmpassword;
 	
 	@FindBy(xpath="//select[@id='AccountFrm_country_id']")
@@ -60,7 +61,7 @@ public class RegisterPage extends BaseClass {
 	@FindBy(xpath="//button[normalize-space()='Continue']")
 	WebElement continuebtn;
 	
-	
+	// To get the all the details from data table and enter in the fields required for registration
 	public void firstnameclk(DataTable datatable) 
 	{
 		List<List<String>>data=datatable.asLists(String.class);

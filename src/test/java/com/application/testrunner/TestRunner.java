@@ -8,12 +8,14 @@ import io.cucumber.testng.CucumberOptions;
 			(
 					
 					
-					features={"G:\\manual testing\\AutomationTestStore_Assignment\\src\\test\\resources\\parallel"},
+					features={"G:\\manual testing\\AutomationTestStore_Assignment\\src\\test\\resources\\FeatureFiles"},
 							glue={"com.application.stepdefinitions"},
 							dryRun=false,
 							monochrome=true,
 					
-							plugin={"pretty","html:reports"}
+							plugin={"pretty","json:target/cucumber-reports/cucumber.json",
+									"html:target/cucumber-reports/cucumberreport.html",
+									}
 		
 			)
 
@@ -21,11 +23,7 @@ import io.cucumber.testng.CucumberOptions;
 		
 		
 
-	    @Override
-	    @DataProvider(parallel = true)
-	    public Object[][] scenarios() {
-	        return super.scenarios(); 
-	    
+	  
 	
-	} 
+	
 }

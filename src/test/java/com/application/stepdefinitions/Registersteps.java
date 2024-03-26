@@ -4,23 +4,20 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
-import com.application.pages.AccountCreationPage;
-import com.application.pages.AddingProductsPage;
-import com.application.pages.RegisterPage;
-
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+import pompages.Accountcreationpage;
+import pompages.Addingproductspage;
+import pompages.Registerpage;
 
 
 public class Registersteps {
 
 	public WebDriver driver;
-	public AccountCreationPage accountpage;
-	public RegisterPage rp;
-	public AddingProductsPage app;
+	public Accountcreationpage accountpage;
+	public Registerpage rp;
+	public Addingproductspage app;
 	
 	
 	@Given("launching chromebrowser")
@@ -30,9 +27,9 @@ public class Registersteps {
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		accountpage = new AccountCreationPage(driver);
-		rp=new RegisterPage(driver)	;	
-		app = new AddingProductsPage(driver);
+		accountpage = new Accountcreationpage(driver);
+		rp=new Registerpage(driver)	;	
+		app = new Addingproductspage(driver);
 	}
 
 	@Given("entering url as {string}")

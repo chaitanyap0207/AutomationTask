@@ -4,29 +4,27 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
-import com.application.pages.AccountCreationPage;
-import com.application.pages.AddingProductsPage;
-import com.application.pages.AddingToCartPage;
-import com.application.pages.CheckoutPage;
-import com.application.pages.PaymentsPage;
-import com.application.pages.ProductsSelectionPage;
-import com.application.pages.RegisterPage;
-
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pompages.Accountcreationpage;
+import pompages.Addingproductspage;
+import pompages.Addtocartpage;
+import pompages.Checkoutpage;
+import pompages.Paymentspage;
+import pompages.Productselectionpage;
+import pompages.Registerpage;
 
 
 
 public class Addtocartsteps {
 	public WebDriver driver;
-	public AccountCreationPage acp;
-	public AddingProductsPage app;
-	public AddingToCartPage atcp;
-	public CheckoutPage cop;
-	public PaymentsPage pp;
-	public ProductsSelectionPage psp;
-	public RegisterPage rp;
+	public Accountcreationpage acp;
+	public Addingproductspage app;
+	public Addtocartpage atcp;
+	public Checkoutpage cop;
+	public Paymentspage pp;
+	public Productselectionpage psp;
+	public Registerpage rp;
 	
 	
 	@Given("launch chromebrowser")
@@ -38,11 +36,11 @@ public class Addtocartsteps {
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		app = new AddingProductsPage(driver);
-		atcp =new  AddingToCartPage(driver);
-		cop = new CheckoutPage(driver);
-		pp =new PaymentsPage(driver);
-		psp=new ProductsSelectionPage(driver);
+		app = new Addingproductspage(driver);
+		atcp =new  Addtocartpage(driver);
+		cop = new Checkoutpage(driver);
+		pp =new Paymentspage(driver);
+		psp=new Productselectionpage(driver);
 			
 	}
 

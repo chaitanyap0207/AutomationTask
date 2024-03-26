@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AddingToCartPage extends BaseClass {
+
+public class AddingToCartPage extends Baseclass {
 	public AddingToCartPage(WebDriver driver) {
 		super(driver);
 	}
